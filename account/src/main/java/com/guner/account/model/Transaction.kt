@@ -12,9 +12,7 @@ data class Transaction(
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: String?,
-
     val transactionType: TransactionType? = TransactionType.INITIAL,
-
     val amount: BigDecimal?,
     val transactionDate: LocalDateTime?,
 
@@ -23,10 +21,10 @@ data class Transaction(
     val account: Account
 
 ) {
-    constructor(amount: BigDecimal, transactionDate: LocalDateTime, account: Account) : this(
+    constructor(amount: BigDecimal, account: Account) : this(
         id = null,
         amount = amount,
-        transactionDate = transactionDate,
+        transactionDate = LocalDateTime.now(),
         transactionType = TransactionType.INITIAL,
         account = account
     )
