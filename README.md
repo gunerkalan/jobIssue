@@ -34,7 +34,6 @@ H2 In memory database
 Docker
 Docker compose
 JUnit 5
-ReactJS for frontend
 Prerequisites
 Maven
 Docker
